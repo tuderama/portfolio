@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="output.css">
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  </head>
+  <body class="px-[35px] lg:px-[160px] bg-white">
+    <!-- to top button -->
+    <button onclick="backToTop()" class="fixed bottom-6 right-6 z-10 bg-white text-black font-bold w-12 h-12 rounded-full shadow-lg flex justify-center items-center">
+      <i class="bi bi-arrow-up-short text-3xl "></i>
+    </button>
+    <!-- navbar -->
+    <div x-data="{ mobileMenuIsOpen: false }" @click.away="mobileMenuIsOpen = false" class="text-[16px] font-open flex justify-between font-bold py-[31px]">
+      <div class="text-black">Tude Rama</div>
+      <div class="hidden lg:flex gap-[85px] text-[#777777]">
+        <a href="#" class="hover:text-black hover:border-b-2 hover:border-black border-b-2 border-white ease-in-out transition-all duration-500">Home</a>
+        <a href="#project" class="hover:text-black hover:border-b-2 hover:border-black border-b-2 border-white ease-in-out transition-all duration-500">Project</a>
+        <a href="#tentang" class="hover:text-black hover:border-b-2 hover:border-black border-b-2 border-white ease-in-out transition-all duration-500">Tentang Saya</a>
+      </div>
+      <!-- Mobile Menu Button -->
+	<button @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen" :class="mobileMenuIsOpen ? 'fixed top-6 right-6 z-20' : null" type="button" class="flex text-slate-700  md:hidden" aria-label="mobile menu" aria-controls="mobileMenu">
+		<svg x-cloak x-show="!mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" class="text-black" />
+		</svg>
+		<svg x-cloak x-show="mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+		</svg>
+	</button>
+	<!-- Mobile Menu -->
+	<ul x-cloak x-show="mobileMenuIsOpen" x-transition:enter="transition motion-reduce:transition-none ease-out duration-300" x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0" x-transition:leave="transition motion-reduce:transition-none ease-out duration-300" x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full" id="mobileMenu" class="fixed max-h-svh overflow-y-auto inset-x-0 top-0 z-10 flex flex-col divide-y divide-slate-300 rounded-b-xl border-b border-slate-300 bg-slate-100 text-[#777777] px-6 pb-6 pt-20 md:hidden">
+		<li class="py-4"><a href="#" class="w-full hover:text-black hover:border-b-2  border-white ease-in-out transition-all duration-500" aria-current="page">Home</a></li>
+		<li class="py-4"><a href="#project" class="w-full hover:text-black hover:border-b-2  border-white ease-in-out transition-all duration-500">Project</a></li>
+		<li class="py-4"><a href="#tentang" class="w-full hover:text-black hover:border-b-2  border-white ease-in-out transition-all duration-500">Tentang Saya</a></li>
+		
+	</ul>
+    </div>
+
+    <!-- hero -->
+     <div class="mt-[32px]">
+      <div class="lg:grid lg:grid-cols-12 gap-5 ">
+        <div class="col-span-8 mb-[33px] lg:mb-0">
+          <div class="rounded-[30px] shadow-lg p-[21px] lg:p-[35px] bg-[#F5F5F7]" data-aos="fade-right" data-aos-duration="1000">
+            <div class="text-center lg:text-start font-open font-semibold text-[27px] lg:text-[40px] mb-[20px] lg:mb-[46px] leading-[34px] lg:leading-[47px] type-heading h-[94px] text-black">     
+            </div>
+            <div class="text-center lg:text-start font-inter text-[13px] lg:text-[16px] leading-[16px] lg:leading-[20px] mb-[33px] lg:mb-[128px] text-[#1D1D1F] font-light ">
+              Saya memiliki berbagai pengalaman di bidang Web Developer mulai dari UI/UX design, Frontend hingga Backend dan saya juga menguasai alat-alat seperti Git dan DevOps untuk memastikan proyek dikembangkan secara efisien dan kolaboratif. 
+            </div>
+            <div class="lg:flex gap-[23px] text-black">
+              <div class="flex justify-center">
+                <a href="" class=" mb-[25px] lg:mb-0 text-white bg-black py-[16px] px-[30px] font-open rounded-full hover:scale-105 transition-all ease-in-out duration-500">Hubungi saya</a>
+              </div>
+              <div class="flex justify-center gap-5">
+                <a href="" class="bg-white rounded-full w-[50px] h-[50px] lg:w-[54px] lg:h-[54px] flex justify-center items-center hover:text-white hover:bg-gradient-to-br from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] transition-all ease-in-out duration-500">
+                  <i class="bi bi-instagram text-[25px]"></i>
+                </a>
+                <a href="" class="bg-white rounded-full w-[50px] h-[50px] lg:w-[54px] lg:h-[54px] flex justify-center items-center hover:text-white hover:bg-black transition-all ease-in-out duration-500">
+                  <i class="bi bi-github text-[25px]"></i>
+                </a>
+                <a href="" class="bg-white rounded-full w-[50px] h-[50px] lg:w-[54px] lg:h-[54px] flex justify-center items-center hover:text-white hover:bg-[#0a66c2] transition-all ease-in-out duration-500">
+                  <i class="bi bi-linkedin text-[25px]"></i>
+                </a>
+                <a href="" class="bg-white rounded-full w-[50px] h-[50px] lg:w-[54px] lg:h-[54px] flex justify-center items-center hover:text-white hover:bg-[#cc181e] transition-all ease-in-out duration-500">
+                  <i class="bi bi-youtube text-[25px]"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-4">
+          <div class="rounded-[30px] bg-[#A5FF7A] h-full flex items-end shadow-lg overflow-hidden cursor-pointer group hover:bg-yellow-200 transition-all ease-in-out duration-500" data-aos="fade-left" data-aos-duration="1000">
+            <img src="img/9c0852d020d6b0c2-sticker 1.png" alt="avatar" class="group-hover:scale-110 transition-all ease-in-out duration-500">
+          </div>
+        </div>
+      </div>
+     </div>
+
+     <!-- scrolldown -->
+      <div class="hidden lg:flex justify-center my-14">
+        <div class="border-[2px] border-slate-400 rounded-full w-10 h-16 flex justify-center py-3">
+          <div class="bg-slate-400 w-[4px] h-[15px] rounded-full animate-bounce"></div>
+        </div>
+      </div>
+
+     <!-- project -->
+      <div class="mt-[32px] lg:mt-0" id="project">
+        <div class="lg:grid lg:grid-cols-12 gap-5">
+          <div class="col-span-6 mb-[32px] lg:mb-0">
+            <div class="bg-[#6B5CE5] px-[23px] lg:px-[35px] py-[32px] rounded-[30px] shadow-lg" data-aos="fade-right" data-aos-duration="1000">
+              <div class="lg:flex justify-between">
+                <div class="text-white text-center lg:text-start">
+                  <div class="font-open text-[20px] mb-2">
+                    Sistem Iuran BEM FTK
+                  </div>
+                  <div class="font-inter font-light text-[12px] lg:text-[14px] w-full mb-[24px]">
+                    sistem pembayaran iuran dengan menggunakan payment gateway
+                  </div>
+                </div>
+                <div class="flex justify-center">
+                  <div class="mb-[26px] lg:mb-0 bg-white rounded-full w-[54px] h-[54px] flex justify-center items-center text-black hover:text-white hover:bg-black hover:scale-110 transition-all ease-in-out duration-500">
+                    <i class="bi bi-arrow-up-right-square-fill text-[25px]"></i>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <img src="img/New Macbook Pro Mockup Front View.png" alt="" class="hover:scale-110 transition-all ease-in-out duration-500 cursor-pointer">
+              </div>
+            </div>
+          </div>
+          <div class="col-span-6 mb-[32px] lg:mb-0">
+            <div class="bg-[#303443] px-[23px] lg:px-[35px] py-[32px]  rounded-[30px] shadow-lg" data-aos="fade-left" data-aos-duration="1000">
+              <div class="lg:flex justify-between">
+                <div class="text-white text-center lg:text-start">
+                  <div class="font-open text-[20px] mb-2">
+                    Sistem Iuran BEM FTK
+                  </div>
+                  <div class="font-inter font-light text-[12px] lg:text-[14px] w-full mb-[24px]">
+                    sistem pembayaran iuran dengan menggunakan payment gateway
+                  </div>
+                </div>
+                <div class="flex justify-center">
+                  <div class="mb-[26px] lg:mb-0 bg-white rounded-full w-[54px] h-[54px] flex justify-center items-center text-black hover:text-white hover:bg-black hover:scale-110 transition-all ease-in-out duration-500">
+                    <i class="bi bi-arrow-up-right-square-fill text-[25px]"></i>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <img src="img/New Macbook Pro Mockup Front View.png" alt="" class="hover:scale-110 transition-all ease-in-out duration-500 cursor-pointer">
+              </div>
+            </div>
+          </div>
+          <div class="col-span-6 mb-[32px] lg:mb-0">
+            <div class="bg-black px-[23px] lg:px-[35px] py-[32px]  rounded-[30px] shadow-lg" data-aos="fade-right" data-aos-duration="1000">
+              <div class="lg:flex justify-between">
+                <div class="text-white text-center lg:text-start">
+                  <div class="font-open text-[20px] mb-2">
+                    Sistem Iuran BEM FTK
+                  </div>
+                  <div class="font-inter font-light text-[12px] lg:text-[14px] w-full mb-[24px]">
+                    sistem pembayaran iuran dengan menggunakan payment gateway
+                  </div>
+                </div>
+                <div class="flex justify-center">
+                  <div class="mb-[26px] lg:mb-0 bg-white rounded-full w-[54px] h-[54px] flex justify-center items-center text-black hover:text-white hover:bg-black hover:scale-110 transition-all ease-in-out duration-500">
+                    <i class="bi bi-arrow-up-right-square-fill text-[25px]"></i>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <img src="img/New Macbook Pro Mockup Front View.png" alt="" class="hover:scale-110 transition-all ease-in-out duration-500 cursor-pointer">
+              </div>
+            </div>
+          </div>
+          <div class="col-span-6 mb-[32px] lg:mb-0">
+            <div class="bg-[#F3F3F3] px-[23px] lg:px-[35px] py-[32px]  rounded-[30px] shadow-lg" data-aos="fade-left" data-aos-duration="1000">
+              <div class="lg:flex justify-between">
+                <div class="text-black text-center lg:text-start">
+                  <div class="font-open text-[20px] mb-2">
+                    Sistem Iuran BEM FTK
+                  </div>
+                  <div class="font-inter font-light text-[12px] lg:text-[14px] w-full mb-[24px]">
+                    sistem pembayaran iuran dengan menggunakan payment gateway
+                  </div>
+                </div>
+                <div class="flex justify-center">
+                  <div class="mb-[26px] lg:mb-0 bg-white rounded-full w-[54px] h-[54px] flex justify-center items-center text-black hover:text-white hover:bg-black hover:scale-110 transition-all ease-in-out duration-500">
+                    <i class="bi bi-arrow-up-right-square-fill text-[25px]"></i>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <img src="img/New Macbook Pro Mockup Front View.png" alt="" class="hover:scale-110 transition-all ease-in-out duration-500 cursor-pointer">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- tentang -->
+       <div class="mt-[32px] lg:mt-[95px]" id="tentang">
+          <div class="grid grid-cols-12">
+            <div class="col-span-12">
+              <div class="bg-gradient-to-br from-[#4CA1AF] to-[#C4E0E5] rounded-[30px] text-center overflow-hidden pt-[30px] lg:pt-0 px-[10px] lg:px-0" data-aos="fade-up" data-aos-duration="1000">
+                <div class="lg:flex justify-center items-center">
+                  <div class="mx-5 lg:order-2">
+                    <div class="text-white font-open font-semibold text-[27px] lg:text-[40px] mb-[30px] leading-[34px] lg:leading-[47px]">Ayo, berkenalan lebih dekat dengan Saya!</div>
+                    <div class="lg:w-[636px] inline-flex justify-center text-[13px] lg:text-[16px] font-inter mb-[45px] text-black">
+                      Hai, Saya Tude Rama. Saya lahir pada tanggal 31 Desember 2003 tepat pada malam tahun baru 🥳 dan zodiac saya adalah capricorn si kambing gunung, saya adalah anak pertama dan tidak punya kakak maupun adik (anak tunggal)....
+                    </div>
+                    <div class="flex justify-center w-full">
+                      <div class="text-white bg-black py-[16px] px-[30px] font-open rounded-full hover:scale-105 transition-all ease-in-out duration-500 ">Tentang saya</div>
+                    </div>
+                  </div>
+                  <img src="img/c84de2e306efc48f-sticker 1.png" alt="" class="lg:order-1 hover:scale-110 transition-all ease-in-out duration-500 cursor-pointer">
+                </div>
+              </div>
+            </div>
+          </div>
+       </div>
+
+       <!-- penutup -->
+       <div class="mt-[32px] lg:mt-[95px]">
+        <div class="lg:grid lg:grid-cols-12 gap-5">
+          <div class="col-span-5">
+            <div class="bg-[#FF6259] shadow-lg rounded-[30px] carousel mb-[32px] lg:mb-0" data-aos="fade-right" data-aos-duration="1000">
+              <div class="carousel-item w-full flex justify-center">
+                  <img src="img/203ea5bda6702658-sticker 1.png" alt="" class="">
+              </div>
+              <div class="carousel-item w-full flex justify-center">
+                  <img src="img/d41fc92fee31122a-sticker 1.png" alt="" class="">
+              </div>
+              <div class="carousel-item w-full flex justify-center">
+                  <img src="img/764e65b2bbe761a1-sticker 1.png" alt="" class="">
+              </div>
+              <div class="carousel-item w-full flex justify-center">
+                  <img src="img/7d5cbb27981dc325-sticker 1.png" alt="" class="">
+                </div>
+                <div class="carousel-item w-full flex justify-center">
+                    <img src="img/7491eeaa00e575cd-sticker 1.png" alt="" class="">
+                </div>
+              <div class="carousel-item w-full flex justify-center">
+                  <img src="img/c6f659f888216d15-sticker 1.png" alt="" class="">
+              </div>
+            </div>
+          </div>
+          <div class="col-span-7">
+            <div data-aos="fade-left" data-aos-duration="1000">
+              <div class="bg-white shadow-lg rounded-[30px] px-[38px] pt-[35px] group hover:bg-slate-800 transition-all ease-in-out duration-500 overflow-hidden cursor-pointer" >
+                <div class="lg:flex ">
+                  <div class="text-[58px] lg:text-[64px] w-[270px] font-open font-extrabold leading-[65px] bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent group-hover:bg-gradient-to-r group-hover:from-fuchsia-600 group-hover:to-pink-600 ">TERIMA KASIH SUDAH BERKUN JUNG</div>
+                  <img src="img/c10dd426dd14f60d-sticker 1.png" alt="w-[293px]" class="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       </div>
+       <!-- footer -->
+        <div class="p-[42px] text-center">
+          <div class="font-inter text-xs lg:text-base text-black">© 2024 Tude Rama. All Rights Reserved.</div>
+        </div>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
+        <script>
+          function backToTop() {
+            window.scrollTo({ top: 0 });
+          }
+        </script>
+  </body> 
+</html>
