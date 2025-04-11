@@ -872,6 +872,31 @@ html {
   grid-row-start: 1;
 }
 
+.input {
+  flex-shrink: 1;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1rem;
+  line-height: 2;
+  line-height: 1.5rem;
+  border-radius: var(--rounded-btn, 0.5rem);
+  border-width: 1px;
+  border-color: transparent;
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
+}
+
+.input[type="number"]::-webkit-inner-spin-button,
+.input-md[type="number"]::-webkit-inner-spin-button {
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+  margin-inline-end: -1rem;
+}
+
 .link {
   cursor: pointer;
   text-decoration-line: underline;
@@ -1025,6 +1050,64 @@ html {
   }
 }
 
+.input input {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-p,oklch(var(--p)/var(--tw-bg-opacity)));
+  background-color: transparent;
+}
+
+.input input:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.input[list]::-webkit-calendar-picker-indicator {
+  line-height: 1em;
+}
+
+.input:focus,
+  .input:focus-within {
+  box-shadow: none;
+  border-color: var(--fallback-bc,oklch(var(--bc)/0.2));
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: var(--fallback-bc,oklch(var(--bc)/0.2));
+}
+
+.input:has(> input[disabled]),
+  .input-disabled,
+  .input:disabled,
+  .input[disabled] {
+  cursor: not-allowed;
+  --tw-border-opacity: 1;
+  border-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-border-opacity)));
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity)));
+  color: var(--fallback-bc,oklch(var(--bc)/0.4));
+}
+
+.input:has(> input[disabled])::-moz-placeholder, .input-disabled::-moz-placeholder, .input:disabled::-moz-placeholder, .input[disabled]::-moz-placeholder {
+  color: var(--fallback-bc,oklch(var(--bc)/var(--tw-placeholder-opacity)));
+  --tw-placeholder-opacity: 0.2;
+}
+
+.input:has(> input[disabled])::placeholder,
+  .input-disabled::placeholder,
+  .input:disabled::placeholder,
+  .input[disabled]::placeholder {
+  color: var(--fallback-bc,oklch(var(--bc)/var(--tw-placeholder-opacity)));
+  --tw-placeholder-opacity: 0.2;
+}
+
+.input:has(> input[disabled]) > input[disabled] {
+  cursor: not-allowed;
+}
+
+.input::-webkit-date-and-time-value {
+  text-align: inherit;
+}
+
 .link:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -1121,6 +1204,52 @@ html {
   overflow: hidden;
   border-radius: 40px;
   margin-top: -25px;
+}
+
+.mockup-browser .mockup-browser-toolbar .input {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  height: 1.75rem;
+  width: 24rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity)));
+  padding-left: 2rem;
+  direction: ltr;
+}
+
+.mockup-browser .mockup-browser-toolbar .input:before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  aspect-ratio: 1 / 1;
+  height: 0.75rem;
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  border-radius: 9999px;
+  border-width: 2px;
+  border-color: currentColor;
+  opacity: 0.6;
+}
+
+.mockup-browser .mockup-browser-toolbar .input:after {
+  content: "";
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  height: 0.5rem;
+  --tw-translate-y: 25%;
+  --tw-rotate: -45deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  border-radius: 9999px;
+  border-width: 1px;
+  border-color: currentColor;
+  opacity: 0.6;
 }
 
 @keyframes modal-pop {
@@ -1593,6 +1722,16 @@ html {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#ff2525\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 37 37 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#ff6464\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 100 100 / var(--tw-bg-opacity));
+}
+
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
@@ -1882,123 +2021,123 @@ html {
     content: "";
   }
 
-  0.73% {
+  0.44% {
     content: "H";
   }
 
-  2.17% {
+  2.12% {
     content: "Ha";
   }
 
-  3.08% {
+  2.96% {
     content: "Hai";
   }
 
-  3.77% {
+  3.63% {
     content: "Hai,";
   }
 
-  4.67% {
+  4.04% {
     content: "Hai, ";
   }
 
-  4.97% {
+  5.56% {
     content: "Hai, S";
   }
 
-  6.47% {
+  6.17% {
     content: "Hai, Sa";
   }
 
-  7.35% {
+  6.93% {
     content: "Hai, Say";
   }
 
-  7.63% {
+  8.15% {
     content: "Hai, Saya";
   }
 
-  8.32% {
+  8.61% {
     content: "Hai, Saya ";
   }
 
-  10.06% {
+  9.37% {
     content: "Hai, Saya T";
   }
 
-  10.96% {
+  10.71% {
     content: "Hai, Saya Tu";
   }
 
-  11.25% {
+  11.29% {
     content: "Hai, Saya Tud";
   }
 
-  11.99% {
+  11.79% {
     content: "Hai, Saya Tude";
   }
 
-  12.96% {
+  12.98% {
     content: "Hai, Saya Tude ";
   }
 
-  14.1% {
+  13.86% {
     content: "Hai, Saya Tude R";
   }
 
-  14.92% {
+  15.2% {
     content: "Hai, Saya Tude Ra";
   }
 
-  15.63% {
+  15.46% {
     content: "Hai, Saya Tude Ram";
   }
 
-  16.87% {
+  16.29% {
     content: "Hai, Saya Tude Rama";
   }
 
-  17.78% {
+  17.71% {
     content: "Hai, Saya Tude Rama ";
   }
 
-  18.09% {
+  18.03% {
     content: "Hai, Saya Tude Rama s";
   }
 
-  19.13% {
+  19.76% {
     content: "Hai, Saya Tude Rama se";
   }
 
-  20.04% {
+  19.79% {
     content: "Hai, Saya Tude Rama seo";
   }
 
-  20.78% {
+  21.48% {
     content: "Hai, Saya Tude Rama seor";
   }
 
-  21.71% {
+  22.36% {
     content: "Hai, Saya Tude Rama seora";
   }
 
-  22.33% {
+  22.4% {
     content: "Hai, Saya Tude Rama seoran";
   }
 
-  23.86% {
+  23.21% {
     content: "Hai, Saya Tude Rama seorang";
   }
 
-  24.75% {
+  24.26% {
     content: "Hai, Saya Tude Rama seorang ";
   }
 
-  25.81% {
+  25.8% {
     content: "Hai, Saya Tude Rama seorang F";
   }
 
-  26.56% {
+  26.18% {
     content: "Hai, Saya Tude Rama seorang Fu";
   }
 
@@ -2006,51 +2145,51 @@ html {
     content: "Hai, Saya Tude Rama seorang Ful";
   }
 
-  27.97% {
+  27.78% {
     content: "Hai, Saya Tude Rama seorang Full";
   }
 
-  29.2% {
+  28.97% {
     content: "Hai, Saya Tude Rama seorang Fulls";
   }
 
-  29.36% {
+  29.77% {
     content: "Hai, Saya Tude Rama seorang Fullst";
   }
 
-  31.18% {
+  30.45% {
     content: "Hai, Saya Tude Rama seorang Fullsta";
   }
 
-  31.55% {
+  31.69% {
     content: "Hai, Saya Tude Rama seorang Fullstac";
   }
 
-  32.16% {
+  32.31% {
     content: "Hai, Saya Tude Rama seorang Fullstack";
   }
 
-  33.53% {
+  32.96% {
     content: "Hai, Saya Tude Rama seorang Fullstack ";
   }
 
-  34.45% {
+  33.73% {
     content: "Hai, Saya Tude Rama seorang Fullstack W";
   }
 
-  34.8% {
+  35.15% {
     content: "Hai, Saya Tude Rama seorang Fullstack We";
   }
 
-  36.44% {
+  36.08% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web";
   }
 
-  36.77% {
+  37.06% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web ";
   }
 
-  37.95% {
+  38.06% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web d";
   }
 
@@ -2058,243 +2197,243 @@ html {
     content: "Hai, Saya Tude Rama seorang Fullstack Web de";
   }
 
-  39.32% {
+  39.06% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web dev";
   }
 
-  40.29% {
+  40.11% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web deve";
   }
 
-  41.6% {
+  40.98% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web devel";
   }
 
-  41.74% {
+  42.22% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web develo";
   }
 
-  42.68% {
+  42.53% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web develop";
   }
 
-  44.29% {
+  43.6% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web develope";
   }
 
-  44.34% {
+  45.07% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web developer";
   }
 
-  45.7%, 54.47% {
+  45.64%, 54.42% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web developer.";
   }
 
-  55.35% {
+  55.29% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web developer";
   }
 
-  56.23% {
+  56.17% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web develope";
   }
 
-  57.11% {
+  57.05% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web develop";
   }
 
-  57.98% {
+  57.92% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web develo";
   }
 
-  58.86% {
+  58.8% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web devel";
   }
 
-  59.74% {
+  59.68% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web deve";
   }
 
-  60.62% {
+  60.56% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web dev";
   }
 
-  61.49% {
+  61.43% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web de";
   }
 
-  62.37% {
+  62.31% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web d";
   }
 
-  63.25% {
+  63.19% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web ";
   }
 
-  64.12% {
+  64.06% {
     content: "Hai, Saya Tude Rama seorang Fullstack Web";
   }
 
-  65% {
+  64.94% {
     content: "Hai, Saya Tude Rama seorang Fullstack We";
   }
 
-  65.88% {
+  65.82% {
     content: "Hai, Saya Tude Rama seorang Fullstack W";
   }
 
-  66.76% {
+  66.7% {
     content: "Hai, Saya Tude Rama seorang Fullstack ";
   }
 
-  67.63% {
+  67.57% {
     content: "Hai, Saya Tude Rama seorang Fullstack";
   }
 
-  68.51% {
+  68.45% {
     content: "Hai, Saya Tude Rama seorang Fullstac";
   }
 
-  69.39% {
+  69.33% {
     content: "Hai, Saya Tude Rama seorang Fullsta";
   }
 
-  70.26% {
+  70.2% {
     content: "Hai, Saya Tude Rama seorang Fullst";
   }
 
-  71.14% {
+  71.08% {
     content: "Hai, Saya Tude Rama seorang Fulls";
   }
 
-  72.02% {
+  71.96% {
     content: "Hai, Saya Tude Rama seorang Full";
   }
 
-  72.9% {
+  72.84% {
     content: "Hai, Saya Tude Rama seorang Ful";
   }
 
-  73.77% {
+  73.71% {
     content: "Hai, Saya Tude Rama seorang Fu";
   }
 
-  74.65% {
+  74.59% {
     content: "Hai, Saya Tude Rama seorang F";
   }
 
-  75.53% {
+  75.47% {
     content: "Hai, Saya Tude Rama seorang ";
   }
 
-  76.4% {
+  76.34% {
     content: "Hai, Saya Tude Rama seorang";
   }
 
-  77.28% {
+  77.22% {
     content: "Hai, Saya Tude Rama seoran";
   }
 
-  78.16% {
+  78.1% {
     content: "Hai, Saya Tude Rama seora";
   }
 
-  79.04% {
+  78.98% {
     content: "Hai, Saya Tude Rama seor";
   }
 
-  79.91% {
+  79.85% {
     content: "Hai, Saya Tude Rama seo";
   }
 
-  80.79% {
+  80.73% {
     content: "Hai, Saya Tude Rama se";
   }
 
-  81.67% {
+  81.61% {
     content: "Hai, Saya Tude Rama s";
   }
 
-  82.55% {
+  82.49% {
     content: "Hai, Saya Tude Rama ";
   }
 
-  83.42% {
+  83.36% {
     content: "Hai, Saya Tude Rama";
   }
 
-  84.3% {
+  84.24% {
     content: "Hai, Saya Tude Ram";
   }
 
-  85.18% {
+  85.12% {
     content: "Hai, Saya Tude Ra";
   }
 
-  86.05% {
+  85.99% {
     content: "Hai, Saya Tude R";
   }
 
-  86.93% {
+  86.87% {
     content: "Hai, Saya Tude ";
   }
 
-  87.81% {
+  87.75% {
     content: "Hai, Saya Tude";
   }
 
-  88.69% {
+  88.63% {
     content: "Hai, Saya Tud";
   }
 
-  89.56% {
+  89.5% {
     content: "Hai, Saya Tu";
   }
 
-  90.44% {
+  90.38% {
     content: "Hai, Saya T";
   }
 
-  91.32% {
+  91.26% {
     content: "Hai, Saya ";
   }
 
-  92.19% {
+  92.13% {
     content: "Hai, Saya";
   }
 
-  93.07% {
+  93.01% {
     content: "Hai, Say";
   }
 
-  93.95% {
+  93.89% {
     content: "Hai, Sa";
   }
 
-  94.83% {
+  94.77% {
     content: "Hai, S";
   }
 
-  95.7% {
+  95.64% {
     content: "Hai, ";
   }
 
-  96.58% {
+  96.52% {
     content: "Hai,";
   }
 
-  97.46% {
+  97.4% {
     content: "Hai";
   }
 
-  98.33% {
+  98.27% {
     content: "Ha";
   }
 
-  99.21% {
+  99.15% {
     content: "H";
   }
 
-  100.09% {
+  100.03% {
     content: "";
   }
 }
